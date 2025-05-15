@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lembar Kerja Siswa (LKS) - Matematika X SMA</title>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -30,17 +31,45 @@
         }
         h2 {
             color: #007bff;
-            margin-top: 30px;
-        }
-        p {
-            font-size: 18px;
-            text-align: justify;
         }
         .soal {
             margin-bottom: 20px;
             background-color: #e7f0ff;
             padding: 15px;
             border-radius: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .feedback {
+            display: none;
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+        .essay-container {
+            margin-top: 20px;
+        }
+        .essay-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
         }
         footer {
             text-align: center;
@@ -50,139 +79,87 @@
             margin-top: 30px;
         }
     </style>
+    <script>
+        function cekJawaban(id, benar) {
+            let feedback = document.getElementById(id);
+            feedback.style.display = "block";
+            if (benar) {
+                feedback.innerHTML = "✅ Jawaban Benar!";
+                feedback.classList.add("correct");
+            } else {
+                feedback.innerHTML = "❌ Jawaban Salah, coba lagi!";
+                feedback.classList.add("wrong");
+            }
+        }
+
+        function cekEssay(id, jawabanBenar) {
+            let inputJawaban = document.getElementById(id + "-input").value.trim().toLowerCase();
+            let feedback = document.getElementById(id);
+            feedback.style.display = "block";
+            if (inputJawaban === jawabanBenar.toLowerCase()) {
+                feedback.innerHTML = "✅ Jawaban Benar!";
+                feedback.classList.add("correct");
+            } else {
+                feedback.innerHTML = "❌ Jawaban Salah! Jawaban yang benar adalah: <b>" + jawabanBenar + "</b>";
+                feedback.classList.add("wrong");
+            }
+        }
+    </script>
 </head>
 <body>
     <header>Lembar Kerja Siswa (LKS) - Matematika X SMA</header>
 
     <div class="container">
-        <h1>Materi: Sistem Koordinat Kartesius dan Vektor</h1>
+        <h2>Latihan Soal - Sistem Koordinat Kartesius dan Vektor</h2>
 
-        <h2>1. Sistem Koordinat Kartesius</h2>
-        <p>Sistem Koordinat Kartesius digunakan untuk menentukan posisi suatu titik dalam bidang dua dimensi menggunakan pasangan angka **(x, y)**.</p>
-        <ul>
-            <li>Sumbu X: menunjukkan posisi horizontal.</li>
-            <li>Sumbu Y: menunjukkan posisi vertikal.</li>
-            <li>Empat kuadran berdasarkan tanda dari (x, y).</li>
-        </ul>
-
-        <h2>2. Vektor</h2>
-        <p>Vektor adalah besaran yang memiliki arah dan besar. Beberapa operasi vektor yang sering digunakan:</p>
-        <ul>
-            <li>Penjumlahan dan pengurangan vektor.</li>
-            <li>Perkalian vektor dengan skalar.</li>
-            <li>Menentukan besar dan arah vektor.</li>
-        </ul>
-
-        <h2>Latihan Soal</h2>
+        <h3>Pilihan Ganda</h3>
 
         <div class="soal">
             <p><strong>1. Jika titik A(3,4) dan B(6,8), maka jarak antara kedua titik tersebut adalah...</strong></p>
-            <ol type="A">
-                <li>5</li>
-                <li>√25</li>
-                <li>√45</li>
-                <li>√50</li>
-            </ol>
-            <p><strong>Jawaban:</strong> √25</p>
+            <p>
+
+\[
+                d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+            \]
+
+</p>
+            <button class="btn" onclick="cekJawaban('feedback1', false)">√45</button>
+            <button class="btn" onclick="cekJawaban('feedback1', false)">√50</button>
+            <button class="btn" onclick="cekJawaban('feedback1', true)">√25</button>
+            <button class="btn" onclick="cekJawaban('feedback1', false)">5</button>
+            <p id="feedback1" class="feedback"></p>
         </div>
 
         <div class="soal">
-            <p><strong>2. Kuadran ke-2 dalam sistem koordinat Kartesius memiliki tanda...</strong></p>
-            <ol type="A">
-                <li>(+, +)</li>
-                <li>(-, +)</li>
-                <li>(-, -)</li>
-                <li>(+, -)</li>
-            </ol>
-            <p><strong>Jawaban:</strong> (-, +)</p>
+            <p><strong>2. Besar vektor \( \mathbf{A} = (6, 8) \) adalah...</strong></p>
+            <p>
+
+\[
+                |\mathbf{A}| = \sqrt{x^2 + y^2}
+            \]
+
+</p>
+            <button class="btn" onclick="cekJawaban('feedback2', false)">8</button>
+            <button class="btn" onclick="cekJawaban('feedback2', true)">10</button>
+            <button class="btn" onclick="cekJawaban('feedback2', false)">12</button>
+            <button class="btn" onclick="cekJawaban('feedback2', false)">14</button>
+            <p id="feedback2" class="feedback"></p>
         </div>
 
-        <div class="soal">
-            <p><strong>3. Gradien garis yang melalui titik A(2,3) dan B(5,7) adalah...</strong></p>
-            <ol type="A">
-                <li>1</li>
-                <li>2</li>
-                <li>4/3</li>
-                <li>5/2</li>
-            </ol>
-            <p><strong>Jawaban:</strong> 4/3</p>
+        <h3>Soal Essai</h3>
+
+        <div class="essay-container">
+            <p><strong>1. Tentukan koordinat titik tengah antara A(4,6) dan B(10,2).</strong></p>
+            <input type="text" id="essay1-input" class="essay-input" placeholder="Masukkan jawaban...">
+            <button class="btn" onclick="cekEssay('essay1', '(7,4)')">Cek Jawaban</button>
+            <p id="essay1" class="feedback"></p>
         </div>
 
-        <div class="soal">
-            <p><strong>4. Besar vektor (3, 4) adalah...</strong></p>
-            <ol type="A">
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-            </ol>
-            <p><strong>Jawaban:</strong> 5</p>
-        </div>
-
-        <div class="soal">
-            <p><strong>5. Jika vektor A = (2,3) dan vektor B = (1,2), maka A + B adalah...</strong></p>
-            <ol type="A">
-                <li>(3,5)</li>
-                <li>(2,5)</li>
-                <li>(3,4)</li>
-                <li>(4,6)</li>
-            </ol>
-            <p><strong>Jawaban:</strong> (3,5)</p>
-        </div>
-
-        <div class="soal">
-            <p><strong>6. Operasi vektor yang menghasilkan skalar disebut...</strong></p>
-            <ol type="A">
-                <li>Penjumlahan vektor</li>
-                <li>Perkalian skalar</li>
-                <li>Perkalian titik</li>
-                <li>Pengurangan vektor</li>
-            </ol>
-            <p><strong>Jawaban:</strong> Perkalian titik</p>
-        </div>
-
-        <div class="soal">
-            <p><strong>7. Titik (-3,5) berada di kuadran...</strong></p>
-            <ol type="A">
-                <li>I</li>
-                <li>II</li>
-                <li>III</li>
-                <li>IV</li>
-            </ol>
-            <p><strong>Jawaban:</strong> II</p>
-        </div>
-
-        <div class="soal">
-            <p><strong>8. Perkalian vektor dengan skalar mempengaruhi...</strong></p>
-            <ol type="A">
-                <li>Arah dan besar vektor</li>
-                <li>Hanya arah</li>
-                <li>Hanya besar</li>
-                <li>Tidak berpengaruh</li>
-            </ol>
-            <p><strong>Jawaban:</strong> Hanya besar</p>
-        </div>
-
-        <div class="soal">
-            <p><strong>9. Gradien garis y = 3x - 2 adalah...</strong></p>
-            <ol type="A">
-                <li>-2</li>
-                <li>3</li>
-                <li>5</li>
-                <li>0</li>
-            </ol>
-            <p><strong>Jawaban:</strong> 3</p>
-        </div>
-
-        <div class="soal">
-            <p><strong>10. Besar vektor (6, 8) adalah...</strong></p>
-            <ol type="A">
-                <li>8</li>
-                <li>10</li>
-                <li>12</li>
-                <li>14</li>
-            </ol>
-            <p><strong>Jawaban:</strong> 10</p>
+        <div class="essay-container">
+            <p><strong>2. Berapa hasil dari perkalian skalar vektor \( \mathbf{A} = (3,4) \) dengan faktor 2?</strong></p>
+            <input type="text" id="essay2-input" class="essay-input" placeholder="Masukkan jawaban...">
+            <button class="btn" onclick="cekEssay('essay2', '(6,8)')">Cek Jawaban</button>
+            <p id="essay2" class="feedback"></p>
         </div>
     </div>
 
