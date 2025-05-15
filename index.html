@@ -6,47 +6,71 @@
     <title>Media Pembelajaran Matematika X SMA</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
             background-color: #007bff;
             color: white;
             padding: 20px;
-            font-size: 24px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
         }
-        main {
-            padding: 20px;
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
             font-size: 18px;
-            text-align: left;
-            max-width: 800px;
-            margin: auto;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #004080;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        p {
+            text-align: justify;
+            font-size: 18px;
         }
         img {
             max-width: 100%;
-            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
         }
         .video-container {
             text-align: center;
             margin: 20px 0;
         }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #007bff;
-            font-size: 20px;
-        }
         footer {
-            background-color: #f1f1f1;
-            padding: 10px;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
+            text-align: center;
+            background-color: #0056b3;
+            color: white;
+            padding: 15px;
+            position: relative;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -58,7 +82,7 @@
         <a href="profil.html">Profil</a>
     </nav>
 
-    <main>
+    <div class="container">
         <h1>Sistem Koordinat Kartesius dan Vektor</h1>
 
         <h2>1. Sistem Koordinat Kartesius</h2>
@@ -68,7 +92,7 @@
             <li><b>Sumbu Y:</b> menunjukkan posisi vertikal.</li>
             <li><b>Kuadran:</b> bidang dibagi menjadi empat bagian berdasarkan tanda dari (x, y).</li>
         </ul>
-        <img src="kartesius.jpg" alt="Gambar Sistem Koordinat Kartesius">
+        <img src="kartesius.jpg" alt="Diagram Sistem Koordinat Kartesius">
 
         <h2>2. Vektor</h2>
         <p>Vektor adalah besaran yang memiliki arah dan besar. Vektor dapat direpresentasikan sebagai:</p>
@@ -77,15 +101,14 @@
             <li><b>Vektor Resultan:</b> kombinasi dari dua atau lebih vektor.</li>
             <li><b>Operasi Vektor:</b> penjumlahan, pengurangan, serta perkalian skalar dan titik.</li>
         </ul>
-        <img src="vektor.jpg" alt="Gambar Vektor">
+        <img src="vektor.jpg" alt="Ilustrasi Vektor">
 
         <div class="video-container">
             <h2>Video Pembelajaran</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" 
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID"
                     title="Video Sistem Koordinat Kartesius dan Vektor" frameborder="0" allowfullscreen></iframe>
         </div>
-
-    </main>
+    </div>
 
     <footer>@2025 X SMA</footer>
 </body>
