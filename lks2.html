@@ -4,40 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LKS - Sistem Koordinat Kartesius dan Vektor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #0077b6;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            background-color: #00a896;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #028090;
+        }
+        .notif {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .notif.success {
+            background-color: #88d498;
+            color: #fff;
+        }
+        .notif.error {
+            background-color: #f94144;
+            color: #fff;
+        }
+    </style>
     <script>
-        function cekJawaban(id, benar, pembahasan) {
+        function cekJawaban(id, benar, pembahasan, notifId) {
+            var notif = document.getElementById(notifId);
             if (id === benar) {
-                alert("Jawaban Anda benar!\n\nPembahasan:\n" + pembahasan);
+                notif.innerHTML = "<strong>Jawaban Anda benar!</strong><br>" + pembahasan;
+                notif.className = "notif success";
             } else {
-                alert("Jawaban Anda salah! Ayo coba lagi.");
+                notif.innerHTML = "<strong>Jawaban Anda salah! Ayo coba lagi.</strong>";
+                notif.className = "notif error";
             }
+            notif.style.display = "block";
         }
     </script>
 </head>
 <body>
-    <h1>Lembar Kerja Siswa (LKS)</h1>
 
-    <h2>Soal Pilihan Ganda</h2>
+    <div class="navbar">
+        Lembar Kerja Siswa - Sistem Koordinat Kartesius dan Vektor
+    </div>
 
-    <p>1. Apa nama titik perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius?</p>
-    <button onclick="cekJawaban('a', 'c', 'Titik asal atau titik (0,0) adalah tempat perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius.')">A. Titik maksimum</button>
-    <button onclick="cekJawaban('b', 'c', 'Titik asal atau titik (0,0) adalah tempat perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius.')">B. Titik tengah</button>
-    <button onclick="cekJawaban('c', 'c', 'Titik asal atau titik (0,0) adalah tempat perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius.')">C. Titik asal</button>
-    <button onclick="cekJawaban('d', 'c', 'Titik asal atau titik (0,0) adalah tempat perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius.')">D. Titik koordinat</button>
+    <div class="container">
+        <h2>Soal Pilihan Ganda</h2>
 
-    <p>2. Jika sebuah vektor memiliki panjang 5 dan arahnya sejajar dengan sumbu X positif, maka berapa koordinat vektor tersebut?</p>
-    <button onclick="cekJawaban('a', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).')">A. (0,5)</button>
-    <button onclick="cekJawaban('b', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).')">B. (5,0)</button>
-    <button onclick="cekJawaban('c', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).')">C. (0,-5)</button>
-    <button onclick="cekJawaban('d', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).')">D. (-5,0)</button>
+        <div class="question">
+            <p>1. Apa nama titik perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius?</p>
+            <button class="btn" onclick="cekJawaban('a', 'c', 'Titik asal adalah tempat perpotongan sumbu X dan sumbu Y.', 'notif1')">A. Titik maksimum</button>
+            <button class="btn" onclick="cekJawaban('b', 'c', 'Titik asal adalah tempat perpotongan sumbu X dan sumbu Y.', 'notif1')">B. Titik tengah</button>
+            <button class="btn" onclick="cekJawaban('c', 'c', 'Titik asal adalah tempat perpotongan sumbu X dan sumbu Y.', 'notif1')">C. Titik asal</button>
+            <button class="btn" onclick="cekJawaban('d', 'c', 'Titik asal adalah tempat perpotongan sumbu X dan sumbu Y.', 'notif1')">D. Titik koordinat</button>
+            <div id="notif1" class="notif"></div>
+        </div>
 
-    <h2>Soal Esai</h2>
+        <div class="question">
+            <p>2. Jika sebuah vektor memiliki panjang 5 dan arahnya sejajar dengan sumbu X positif, maka berapa koordinat vektor tersebut?</p>
+            <button class="btn" onclick="cekJawaban('a', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).', 'notif2')">A. (0,5)</button>
+            <button class="btn" onclick="cekJawaban('b', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).', 'notif2')">B. (5,0)</button>
+            <button class="btn" onclick="cekJawaban('c', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).', 'notif2')">C. (0,-5)</button>
+            <button class="btn" onclick="cekJawaban('d', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).', 'notif2')">D. (-5,0)</button>
+            <div id="notif2" class="notif"></div>
+        </div>
 
-    <p>3. Jelaskan konsep sistem koordinat kartesius dan bagaimana cara menentukan posisi suatu titik dalam sistem ini?</p>
-    <textarea rows="4" cols="50" placeholder="Tulis jawaban Anda di sini..."></textarea>
+        <h2>Soal Esai</h2>
 
-    <p>4. Sebuah vektor memiliki komponen X = 3 dan komponen Y = 4. Hitung panjang vektor dan jelaskan bagaimana cara menghitungnya!</p>
-    <textarea rows="4" cols="50" placeholder="Tulis jawaban Anda di sini..."></textarea>
+        <div class="question">
+            <p>3. Jelaskan konsep sistem koordinat kartesius dan bagaimana cara menentukan posisi suatu titik dalam sistem ini?</p>
+            <textarea rows="4" cols="50" placeholder="Tulis jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div class="question">
+            <p>4. Sebuah vektor memiliki komponen X = 3 dan komponen Y = 4. Hitung panjang vektor dan jelaskan bagaimana cara menghitungnya!</p>
+            <textarea rows="4" cols="50" placeholder="Tulis jawaban Anda di sini..."></textarea>
+        </div>
+
+    </div>
 
 </body>
 </html>
