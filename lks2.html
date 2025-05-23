@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKS - Sistem Koordinat Kartesius dan Vektor</title>
+    <script>
+        function cekJawaban(id, benar, pembahasan) {
+            if (id === benar) {
+                alert("Jawaban Anda benar!\n\nPembahasan:\n" + pembahasan);
+            } else {
+                alert("Jawaban Anda salah! Ayo coba lagi.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Lembar Kerja Siswa (LKS)</h1>
+
+    <h2>Soal Pilihan Ganda</h2>
+
+    <p>1. Apa nama titik perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius?</p>
+    <button onclick="cekJawaban('a', 'c', 'Titik asal atau titik (0,0) adalah tempat perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius.')">A. Titik maksimum</button>
+    <button onclick="cekJawaban('b', 'c', 'Titik asal atau titik (0,0) adalah tempat perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius.')">B. Titik tengah</button>
+    <button onclick="cekJawaban('c', 'c', 'Titik asal atau titik (0,0) adalah tempat perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius.')">C. Titik asal</button>
+    <button onclick="cekJawaban('d', 'c', 'Titik asal atau titik (0,0) adalah tempat perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius.')">D. Titik koordinat</button>
+
+    <p>2. Jika sebuah vektor memiliki panjang 5 dan arahnya sejajar dengan sumbu X positif, maka berapa koordinat vektor tersebut?</p>
+    <button onclick="cekJawaban('a', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).')">A. (0,5)</button>
+    <button onclick="cekJawaban('b', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).')">B. (5,0)</button>
+    <button onclick="cekJawaban('c', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).')">C. (0,-5)</button>
+    <button onclick="cekJawaban('d', 'b', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).')">D. (-5,0)</button>
+
+    <h2>Soal Esai</h2>
+
+    <p>3. Jelaskan konsep sistem koordinat kartesius dan bagaimana cara menentukan posisi suatu titik dalam sistem ini?</p>
+    <textarea rows="4" cols="50" placeholder="Tulis jawaban Anda di sini..."></textarea>
+
+    <p>4. Sebuah vektor memiliki komponen X = 3 dan komponen Y = 4. Hitung panjang vektor dan jelaskan bagaimana cara menghitungnya!</p>
+    <textarea rows="4" cols="50" placeholder="Tulis jawaban Anda di sini..."></textarea>
+
+</body>
+</html>
