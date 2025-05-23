@@ -157,7 +157,7 @@
                 <label><input type="radio" name="notif2" value="A"> A. (2,5)</label>
                 <label><input type="radio" name="notif2" value="B"> B. (-2,-5)</label>
                 <label><input type="radio" name="notif2" value="C"> C. (2,-5)</label>
-                <label><input type="radio" name="notif2" value="D"> D. (-2,5)</label>
+                <label><input type="radio" name="notif2" value="D"> D. (-2,-5)</label>
             </div>
             <button class="submit-btn" onclick="cekJawaban('D', 'Jika titik asal A(x,y) maka bayangannya setelah dicerminkan terhadap sumbu X adalah A(x,-y) sehingga pencerminan titik C(-2,5) terhadap sumbu X adalah C(-2,-5)', 'notif2')">Kirim Jawaban</button>
             <div id="notif2" class="notif"></div>
@@ -173,7 +173,7 @@
                 <label><input type="radio" name="notif3" value="C"> C. $$\sqrt{100}$$</label>
                 <label><input type="radio" name="notif3" value="D"> D. $$\sqrt{140}$$</label>
             </div>
-            <button class="submit-btn" onclick="cekJawaban('C', '<p> Rumus jarak antara titik A dan B adalah $$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$$ maka $$\sqrt{(5-(-3))^2+(-2-4)^2} = $$\sqrt{(8^2+(-6)^2} = $$\sqrt{64+36} = $$\sqrt{100}$$ </p>', 'notif3')">Kirim Jawaban</button>
+            <button class="submit-btn" onclick="cekJawaban('C', 'Jarak antara titik A dan B adalah $$\sqrt{100}$$', 'notif3')">Kirim Jawaban</button>
             <div id="notif3" class="notif"></div>
               </div>
         </div>
@@ -213,5 +213,89 @@
 
     </div>
 
+ <div class="container">
+        <h1>Soal Sistem Koordinat Kartesius</h1>
+    </div>
+    
+    <div class="container">
+        <h2>Soal Pilihan Ganda</h2>
+
+       <div class="section-box">
+        <div class="question">  
+            <p>1. Diketahui titik T(7,5) dan titik U(3,-2), tentukan hasil pengurangan T - U!</p>
+            <div class="minimal-radio">
+                <label><input type="radio" name="notif1" value="A"> A. (4,-7)</label>
+                <label><input type="radio" name="notif1" value="B"> B. (-4,-7)</label>
+                <label><input type="radio" name="notif1" value="C"> C. (7,4)</label>
+                <label><input type="radio" name="notif1" value="D"> D. (-7,4)</label>
+            </div>
+            <button class="submit-btn" onclick="cekJawaban('C', 'Hasil pengurangan T - U adalah (7-3,5-(-2)) = (4,7)', 'notif1')">Kirim Jawaban</button>
+            <div id="notif1" class="notif"></div>
+              </div>
+        </div>
+
+         <div class="section-box">
+        <div class="question">  
+            <p>2. Titik yang merupakan hasil dari pencerminan titik C(-2,5) terhadap sumbu X adalah?</p>
+            <div class="minimal-radio">
+                <label><input type="radio" name="notif2" value="A"> A. (2,5)</label>
+                <label><input type="radio" name="notif2" value="B"> B. (-2,-5)</label>
+                <label><input type="radio" name="notif2" value="C"> C. (2,-5)</label>
+                <label><input type="radio" name="notif2" value="D"> D. (-2,-5)</label>
+            </div>
+            <button class="submit-btn" onclick="cekJawaban('D', 'Jika titik asal A(x,y) maka bayangannya setelah dicerminkan terhadap sumbu X adalah A(x,-y) sehingga pencerminan titik C(-2,5) terhadap sumbu X adalah C(-2,-5)', 'notif2')">Kirim Jawaban</button>
+            <div id="notif2" class="notif"></div>
+              </div>
+        </div>
+        
+         <div class="section-box">
+        <div class="question">  
+            <p>3. Titik A(-3,4) dan B(5,-2). Jarak antara titik A dan B adalah?</p>
+            <div class="minimal-radio">
+                <label><input type="radio" name="notif3" value="A"> A. $$\sqrt{40}$$</p></label>
+                <label><input type="radio" name="notif3" value="B"> B. $$\sqrt{64}$$</label>
+                <label><input type="radio" name="notif3" value="C"> C. $$\sqrt{100}$$</label>
+                <label><input type="radio" name="notif3" value="D"> D. $$\sqrt{140}$$</label>
+            </div>
+            <button class="submit-btn" onclick="cekJawaban('C', 'Jarak antara titik A dan B adalah $$\sqrt{100}$$', 'notif3')">Kirim Jawaban</button>
+            <div id="notif3" class="notif"></div>
+              </div>
+        </div>
+        
+        <div class="section-box">
+        <div class="question">
+            <p>2. Sebuah vektor memiliki panjang 5 dan arahnya sejajar dengan sumbu X positif, maka berapa koordinat vektor tersebut?</p>
+            <div class="minimal-radio">
+                <label><input type="radio" name="notif4" value="A"> A. (0,5)</label>
+                <label><input type="radio" name="notif4" value="B"> B. (5,0)</label>
+                <label><input type="radio" name="notif4" value="C"> C. (0,-5)</label>
+                <label><input type="radio" name="notif4" value="D"> D. (-5,0)</label>
+            </div>
+            <button class="submit-btn" onclick="cekJawaban('B', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).', 'notif4')">Kirim Jawaban</button>
+            <div id="notif4" class="notif"></div>
+        </div>
+    
+</div>
+        
+        <h2>Soal Esai</h2>
+<div class="section-box">
+        <div class="question">
+            <p>1. Jelaskan konsep sistem koordinat kartesius dan bagaimana cara menentukan posisi suatu titik dalam sistem ini?</p>
+            <textarea rows="3" cols="110" placeholder="Tulis jawaban Anda di sini..."></textarea>
+            <button class="submit-btn" onclick="kirimJawabanEsai('notif3', 'Sistem koordinat kartesius menggunakan sumbu X dan Y untuk menentukan posisi suatu titik berdasarkan pasangan (x,y).')">Kirim Jawaban</button>
+            <div id="notif3" class="notif"></div>
+        </div>
+</div>
+        <div class="section-box">
+        <div class="question">
+            <p>2. Sebuah vektor memiliki komponen X = 3 dan komponen Y = 4. Hitung panjang vektor dan jelaskan bagaimana cara menghitungnya!</p>
+            <textarea rows="3" cols="110" placeholder="Tulis jawaban Anda di sini..."></textarea>
+            <button class="submit-btn" onclick="kirimJawabanEsai('notif4', 'Panjang vektor dapat dihitung dengan rumus Pythagoras: √(3² + 4²) = 5.')">Kirim Jawaban</button>
+            <div id="notif4" class="notif"></div>
+        </div>
+        </div>
+
+    </div>
+    
 </body>
 </html>
