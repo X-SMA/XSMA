@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis - Koordinat Kartesius & Vektor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #0077b6;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            color: white;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #00a896;
+            color: white;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            background-color: #ffffff;
+            border: 2px solid #0077b6;
+            transition: transform 0.3s ease-in-out;
+        }
+        .question:hover {
+            transform: scale(1.05);
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .notif {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .notif.success {
+            background-color: #88d498;
+            color: #fff;
+        }
+        .notif.error {
+            background-color: #f94144;
+            color: #fff;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #0077b6;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .score {
+            display: none;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #00a896;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+    <script>
+        let score = 0;
+        
+        function cekJawaban(id, benar, pembahasan, notifId) {
+            var notif = document.getElementById(notifId);
+            var selected = document.querySelector(`input[name="${notifId}"]:checked`);
+            
+            if (selected) {
+                if (selected.value === benar) {
+                    notif.innerHTML = "<strong>Jawaban Anda benar!</strong><br>" + pembahasan;
+                    notif.className = "notif success";
+                    score += 10;
+                } else {
+                    notif.innerHTML = "<strong>Jawaban Anda salah! Ayo coba lagi.</strong>";
+                    notif.className = "notif error";
+                }
+                notif.style.display = "block";
+            } else {
+                alert("Silakan pilih jawaban terlebih dahulu.");
+            }
+        }
+
+        function tampilkanSkor() {
+            document.getElementById("skor").innerHTML = "Skor Anda: " + score + "/100";
+            document.getElementById("skor").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="navbar">Kuis - Koordinat Kartesius & Vektor</div>
+
+    <div class="header">Selamat Mengerjakan!</div>
+
+    <div class="container">
+        <h2>Sistem Koordinat Kartesius</h2>
+
+        <div class="question">
+            <p>1. Apa nama titik perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius?</p>
+            <div class="options">
+                <label><input type="radio" name="notif1" value="A"> A. Titik maksimum</label>
+                <label><input type="radio" name="notif1" value="B"> B. Titik tengah</label>
+                <label><input type="radio" name="notif1" value="C"> C. Titik asal</label>
+                <label><input type="radio" name="notif1" value="D"> D. Titik koordinat</label>
+            </div>
+            <button class="submit-btn" onclick="cekJawaban('notif1', 'C', 'Titik asal adalah (0,0), perpotongan antara sumbu X dan Y.', 'notif1')">Kirim Jawaban</button>
+            <div id="notif1" class="notif"></div>
+        </div>
+
+        <!-- Tambahkan 4 soal lain tentang koordinat kartesius -->
+
+        <h2>Vektor</h2>
+
+        <div class="question">
+            <p>6. Sebuah vektor memiliki panjang 5 dan arahnya sejajar dengan sumbu X positif, maka berapa koordinat vektor tersebut?</p>
+            <div class="options">
+                <label><input type="radio" name="notif6" value="A"> A. (0,5)</label>
+                <label><input type="radio" name="notif6" value="B"> B. (5,0)</label>
+                <label><input type="radio" name="notif6" value="C"> C. (0,-5)</label>
+                <label><input type="radio" name="notif6" value="D"> D. (-5,0)</label>
+            </div>
+            <button class="submit-btn" onclick="cekJawaban('notif6', 'B', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).', 'notif6')">Kirim Jawaban</button>
+            <div id="notif6" class="notif"></div>
+        </div>
+
+        <!-- Tambahkan 4 soal lain tentang vektor -->
+
+        <button class="submit-btn" onclick="tampilkanSkor()">Lihat Skor</button>
+        <div id="skor" class="score"></div>
+    </div>
+
+</body>
+</html>
