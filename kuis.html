@@ -70,62 +70,25 @@
             cursor: pointer;
             border-radius: 5px;
         }
-        .score-box {
-            display: none;
-            font-size: 18px;
-            text-align: center;
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #00a896;
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-        }
     </style>
     <script>
-        let score = 0;
         const answers = {
-            "notif1": "C",
-            "notif2": "B",
-            "notif3": "A",
-            "notif4": "D",
-            "notif5": "C",
-            "notif6": "B",
-            "notif7": "A",
-            "notif8": "D",
-            "notif9": "C",
-            "notif10": "B"
+            "notif1": "C - Titik asal adalah perpotongan sumbu X dan Y.",
+            "notif2": "B - Vektor sejajar sumbu X positif memiliki koordinat (5,0).",
+            "notif3": "A - Jawaban yang benar sesuai teori.",
+            "notif4": "D - Definisi vektor dalam sistem koordinat.",
+            "notif5": "C - Titik dalam sistem kartesius.",
+            "notif6": "B - Jawaban vektor yang sesuai.",
+            "notif7": "A - Konsep dasar vektor.",
+            "notif8": "D - Rumus perhitungan vektor.",
+            "notif9": "C - Penjelasan tentang sistem kartesius.",
+            "notif10": "B - Jawaban vektor yang benar."
         };
 
         function kirimJawaban(notifId) {
             var notif = document.getElementById(notifId);
-            notif.innerHTML = "Terima kasih atas jawabannya.";
+            notif.innerHTML = `<strong>Terima kasih atas jawabannya.</strong><br><br><strong>Kunci Jawaban:</strong><br>${answers[notifId]}`;
             notif.style.display = "block";
-        }
-
-        function tampilkanSkor() {
-            let correctAnswers = 0;
-            for (let key in answers) {
-                let selected = document.querySelector(`input[name="${key}"]:checked`);
-                if (selected && selected.value === answers[key]) {
-                    correctAnswers += 1;
-                }
-            }
-
-            let totalScore = correctAnswers * 10;
-            let scoreBox = document.getElementById("scoreBox");
-            scoreBox.innerHTML = `Skor Anda: ${totalScore}/100 <br><br> Kunci Jawaban:<br> 
-                1. C - Titik asal adalah perpotongan sumbu X dan Y.<br>
-                2. B - Vektor sejajar sumbu X positif memiliki koordinat (5,0).<br>
-                3. A - Pilihan yang tepat sesuai teori.<br>
-                4. D - Definisi sesuai soal.<br>
-                5. C - Titik dalam koordinat kartesius.<br>
-                6. B - Jawaban vektor sejajar sumbu.<br>
-                7. A - Konsep dasar vektor.<br>
-                8. D - Rumus vektor.<br>
-                9. C - Konsep koordinat kartesius.<br>
-                10. B - Pilihan vektor yang tepat.`;
-            scoreBox.style.display = "block";
         }
     </script>
 </head>
@@ -168,8 +131,6 @@
 
         <!-- Tambahkan 4 soal vektor lainnya -->
 
-        <button class="submit-btn" onclick="tampilkanSkor()">Lihat Skor</button>
-        <div id="scoreBox" class="score-box"></div>
     </div>
 
 </body>
