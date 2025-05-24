@@ -56,14 +56,8 @@
             padding: 10px;
             border-radius: 5px;
             display: none;
-        }
-        .notif.success {
-            background-color: #88d498;
-            color: #fff;
-        }
-        .notif.error {
-            background-color: #f94144;
-            color: #fff;
+            background-color: #00a896;
+            color: white;
         }
         .submit-btn {
             display: block;
@@ -76,12 +70,12 @@
             cursor: pointer;
             border-radius: 5px;
         }
-        .score {
+        .score-box {
             display: none;
-            font-size: 20px;
+            font-size: 18px;
             text-align: center;
             margin-top: 20px;
-            padding: 10px;
+            padding: 15px;
             background-color: #00a896;
             color: white;
             border-radius: 8px;
@@ -90,29 +84,48 @@
     </style>
     <script>
         let score = 0;
-        
-        function cekJawaban(id, benar, pembahasan, notifId) {
+        const answers = {
+            "notif1": "C",
+            "notif2": "B",
+            "notif3": "A",
+            "notif4": "D",
+            "notif5": "C",
+            "notif6": "B",
+            "notif7": "A",
+            "notif8": "D",
+            "notif9": "C",
+            "notif10": "B"
+        };
+
+        function kirimJawaban(notifId) {
             var notif = document.getElementById(notifId);
-            var selected = document.querySelector(`input[name="${notifId}"]:checked`);
-            
-            if (selected) {
-                if (selected.value === benar) {
-                    notif.innerHTML = "<strong>Jawaban Anda benar!</strong><br>" + pembahasan;
-                    notif.className = "notif success";
-                    score += 10;
-                } else {
-                    notif.innerHTML = "<strong>Jawaban Anda salah! Ayo coba lagi.</strong>";
-                    notif.className = "notif error";
-                }
-                notif.style.display = "block";
-            } else {
-                alert("Silakan pilih jawaban terlebih dahulu.");
-            }
+            notif.innerHTML = "Terima kasih atas jawabannya.";
+            notif.style.display = "block";
         }
 
         function tampilkanSkor() {
-            document.getElementById("skor").innerHTML = "Skor Anda: " + score + "/100";
-            document.getElementById("skor").style.display = "block";
+            let correctAnswers = 0;
+            for (let key in answers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                if (selected && selected.value === answers[key]) {
+                    correctAnswers += 1;
+                }
+            }
+
+            let totalScore = correctAnswers * 10;
+            let scoreBox = document.getElementById("scoreBox");
+            scoreBox.innerHTML = `Skor Anda: ${totalScore}/100 <br><br> Kunci Jawaban:<br> 
+                1. C - Titik asal adalah perpotongan sumbu X dan Y.<br>
+                2. B - Vektor sejajar sumbu X positif memiliki koordinat (5,0).<br>
+                3. A - Pilihan yang tepat sesuai teori.<br>
+                4. D - Definisi sesuai soal.<br>
+                5. C - Titik dalam koordinat kartesius.<br>
+                6. B - Jawaban vektor sejajar sumbu.<br>
+                7. A - Konsep dasar vektor.<br>
+                8. D - Rumus vektor.<br>
+                9. C - Konsep koordinat kartesius.<br>
+                10. B - Pilihan vektor yang tepat.`;
+            scoreBox.style.display = "block";
         }
     </script>
 </head>
@@ -133,11 +146,11 @@
                 <label><input type="radio" name="notif1" value="C"> C. Titik asal</label>
                 <label><input type="radio" name="notif1" value="D"> D. Titik koordinat</label>
             </div>
-            <button class="submit-btn" onclick="cekJawaban('notif1', 'C', 'Titik asal adalah (0,0), perpotongan antara sumbu X dan Y.', 'notif1')">Kirim Jawaban</button>
+            <button class="submit-btn" onclick="kirimJawaban('notif1')">Kirim Jawaban</button>
             <div id="notif1" class="notif"></div>
         </div>
 
-        <!-- Tambahkan 4 soal lain tentang koordinat kartesius -->
+        <!-- Tambahkan 4 soal koordinat kartesius lainnya -->
 
         <h2>Vektor</h2>
 
@@ -149,14 +162,14 @@
                 <label><input type="radio" name="notif6" value="C"> C. (0,-5)</label>
                 <label><input type="radio" name="notif6" value="D"> D. (-5,0)</label>
             </div>
-            <button class="submit-btn" onclick="cekJawaban('notif6', 'B', 'Vektor yang sejajar sumbu X positif memiliki koordinat (5,0).', 'notif6')">Kirim Jawaban</button>
+            <button class="submit-btn" onclick="kirimJawaban('notif6')">Kirim Jawaban</button>
             <div id="notif6" class="notif"></div>
         </div>
 
-        <!-- Tambahkan 4 soal lain tentang vektor -->
+        <!-- Tambahkan 4 soal vektor lainnya -->
 
         <button class="submit-btn" onclick="tampilkanSkor()">Lihat Skor</button>
-        <div id="skor" class="score"></div>
+        <div id="scoreBox" class="score-box"></div>
     </div>
 
 </body>
