@@ -59,6 +59,14 @@
             background-color: #00a896;
             color: white;
         }
+        .kunci-jawaban {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #0077b6;
+            color: white;
+        }
         .submit-btn {
             display: block;
             width: 100%;
@@ -70,25 +78,57 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        .score-box {
+            display: none;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #00a896;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
     </style>
     <script>
+        let score = 0;
         const answers = {
-            "notif1": "C - Titik asal adalah perpotongan sumbu X dan Y.",
-            "notif2": "B - Vektor sejajar sumbu X positif memiliki koordinat (5,0).",
-            "notif3": "A - Jawaban yang benar sesuai teori.",
-            "notif4": "D - Definisi vektor dalam sistem koordinat.",
-            "notif5": "C - Titik dalam sistem kartesius.",
-            "notif6": "B - Jawaban vektor yang sesuai.",
-            "notif7": "A - Konsep dasar vektor.",
-            "notif8": "D - Rumus perhitungan vektor.",
-            "notif9": "C - Penjelasan tentang sistem kartesius.",
-            "notif10": "B - Jawaban vektor yang benar."
+            "notif1": "C",
+            "notif2": "B",
+            "notif3": "A",
+            "notif4": "D",
+            "notif5": "C",
+            "notif6": "B",
+            "notif7": "A",
+            "notif8": "D",
+            "notif9": "C",
+            "notif10": "B"
         };
 
         function kirimJawaban(notifId) {
             var notif = document.getElementById(notifId);
-            notif.innerHTML = `<strong>Terima kasih atas jawabannya.</strong><br><br><strong>Kunci Jawaban:</strong><br>${answers[notifId]}`;
+            notif.innerHTML = "<strong>Terima kasih atas jawabannya.</strong>";
             notif.style.display = "block";
+        }
+
+        function tampilkanSkor() {
+            let correctAnswers = 0;
+            for (let key in answers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                if (selected && selected.value === answers[key]) {
+                    correctAnswers += 1;
+                }
+            }
+
+            let totalScore = correctAnswers * 10;
+            document.getElementById("scoreBox").innerHTML = `<strong>Skor Anda: ${totalScore}/100</strong>`;
+            document.getElementById("scoreBox").style.display = "block";
+
+            for (let key in answers) {
+                let kunciJawaban = document.getElementById(`kunci-${key}`);
+                kunciJawaban.innerHTML = `<strong>Kunci Jawaban:</strong> ${answers[key]}`;
+                kunciJawaban.style.display = "block";
+            }
         }
     </script>
 </head>
@@ -111,6 +151,7 @@
             </div>
             <button class="submit-btn" onclick="kirimJawaban('notif1')">Kirim Jawaban</button>
             <div id="notif1" class="notif"></div>
+            <div id="kunci-notif1" class="kunci-jawaban"></div>
         </div>
 
         <!-- Tambahkan 4 soal koordinat kartesius lainnya -->
@@ -127,10 +168,13 @@
             </div>
             <button class="submit-btn" onclick="kirimJawaban('notif6')">Kirim Jawaban</button>
             <div id="notif6" class="notif"></div>
+            <div id="kunci-notif6" class="kunci-jawaban"></div>
         </div>
 
         <!-- Tambahkan 4 soal vektor lainnya -->
 
+        <button class="submit-btn" onclick="tampilkanSkor()">Lihat Skor & Kunci Jawaban</button>
+        <div id="scoreBox" class="score-box"></div>
     </div>
 
 </body>
