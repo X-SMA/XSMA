@@ -131,6 +131,18 @@
             }
         }
     </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+    
 </head>
 <body>
 
@@ -155,33 +167,55 @@
         </div>
 
          <div class="question">
-            <p>2. Apa nama titik perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius?</p>
+            <p>2. Jarak antara titik A(1,2) dan B(4,6) adalah?</p>
             <div class="options">
-                <label><input type="radio" name="notif2" value="A"> A. Titik maksimum</label>
-                <label><input type="radio" name="notif2" value="B"> B. Titik tengah</label>
-                <label><input type="radio" name="notif2" value="C"> C. Titik asal</label>
-                <label><input type="radio" name="notif2" value="D"> D. Titik koordinat</label>
+                <label><input type="radio" name="notif2" value="A"> A. 4</label>
+                <label><input type="radio" name="notif2" value="B"> B. 5</label>
+                <label><input type="radio" name="notif2" value="C"> C. 6</label>
+                <label><input type="radio" name="notif2" value="D"> D. 7</label>
             </div>
             <button class="submit-btn" onclick="kirimJawaban('notif2')">Kirim Jawaban</button>
             <div id="notif2" class="notif"></div>
             <div id="kunci-notif2" class="kunci-jawaban"></div>
         </div>
-        
-        <!-- Tambahkan 4 soal koordinat kartesius lainnya -->
-
-        <h2>Vektor</h2>
 
         <div class="question">
-            <p>3. Apa nama titik perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius?</p>
+            <p>3. Koordinat titik tengah dari garis yang menghubungkan titik A(2,6) dan B(4,10) adalah? </p>
             <div class="options">
-                <label><input type="radio" name="notif3" value="A"> A. Titik maksimum</label>
-                <label><input type="radio" name="notif3" value="B"> B. Titik tengah</label>
-                <label><input type="radio" name="notif3" value="C"> C. Titik asal</label>
-                <label><input type="radio" name="notif3" value="D"> D. Titik koordinat</label>
+                <label><input type="radio" name="notif3" value="A"> A. (3,8)</label>
+                <label><input type="radio" name="notif3" value="B"> B. (3,7)</label>
+                <label><input type="radio" name="notif3" value="C"> C. (2,8)</label>
+                <label><input type="radio" name="notif3" value="D"> D. (4,6)</label>
             </div>
             <button class="submit-btn" onclick="kirimJawaban('notif3')">Kirim Jawaban</button>
             <div id="notif3" class="notif"></div>
             <div id="kunci-notif3" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
+            <p>4. Jika titik C(p,5) berjarak 5 satuan dari titik D(1,1), maka nilai p yang mungkin adalah?</p>
+            <div class="options">
+                <label><input type="radio" name="notif4" value="A"> A. 4 atau -2</label>
+                <label><input type="radio" name="notif4" value="B"> B. 5 atau -3</label>
+                <label><input type="radio" name="notif4" value="C"> C. 2 atau 3</label>
+                <label><input type="radio" name="notif4" value="D"> D. 6 atau 0</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif4')">Kirim Jawaban</button>
+            <div id="notif4" class="notif"></div>
+            <div id="kunci-notif4" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
+            <p>5. Titik P(3,-4) terletak pada kuadran ke-berapa?</p>
+            <div class="options">
+                <label><input type="radio" name="notif5" value="A"> A. Kuadran I </label>
+                <label><input type="radio" name="notif5" value="B"> B. Kuadran II</label>
+                <label><input type="radio" name="notif5" value="C"> C. Kuadran III</label>
+                <label><input type="radio" name="notif5" value="D"> D. Kuadran IV</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif5')">Kirim Jawaban</button>
+            <div id="notif5" class="notif"></div>
+            <div id="kunci-notif5" class="kunci-jawaban"></div>
         </div>
 
          <div class="question">
@@ -197,8 +231,58 @@
             <div id="kunci-notif6" class="kunci-jawaban"></div>
         </div>
         
-        <!-- Tambahkan 4 soal vektor lainnya -->
+               <div class="question">
+            <p>7. Jika vekrtor: \(\vec{u}\)(2,-1) dan vekrtor: \(\vec{v}\)(-3,4), maka vekrtor: \(\vec{u}\)+vekrtor: \(\vec{v}\) adalah? </p>
+            <div class="options">
+                <label><input type="radio" name="notif7" value="A"> A. (-1,3)</label>
+                <label><input type="radio" name="notif7" value="B"> B. (5,-5)</label>
+                <label><input type="radio" name="notif7" value="C"> C. (-1,5)</label>
+                <label><input type="radio" name="notif7" value="D"> D. (-5,3)</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif7')">Kirim Jawaban</button>
+            <div id="notif7" class="notif"></div>
+            <div id="kunci-notif7" class="kunci-jawaban"></div>
+        </div>
+        
+         <div class="question">
+            <p>6. Diberikan vektor A(3,4). Panjang vektor A adalah? </p>
+            <div class="options">
+                <label><input type="radio" name="notif6" value="A"> A.</label>
+                <label><input type="radio" name="notif6" value="B"> B.</label>
+                <label><input type="radio" name="notif6" value="C"> C. </label>
+                <label><input type="radio" name="notif6" value="D"> D. </label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif6')">Kirim Jawaban</button>
+            <div id="notif6" class="notif"></div>
+            <div id="kunci-notif6" class="kunci-jawaban"></div>
+        </div>
 
+         <div class="question">
+            <p>6. </p>
+            <div class="options">
+                <label><input type="radio" name="notif6" value="A"> A.</label>
+                <label><input type="radio" name="notif6" value="B"> B.</label>
+                <label><input type="radio" name="notif6" value="C"> C. </label>
+                <label><input type="radio" name="notif6" value="D"> D. </label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif6')">Kirim Jawaban</button>
+            <div id="notif6" class="notif"></div>
+            <div id="kunci-notif6" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
+            <p>6. </p>
+            <div class="options">
+                <label><input type="radio" name="notif6" value="A"> A.</label>
+                <label><input type="radio" name="notif6" value="B"> B.</label>
+                <label><input type="radio" name="notif6" value="C"> C. </label>
+                <label><input type="radio" name="notif6" value="D"> D. </label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif6')">Kirim Jawaban</button>
+            <div id="notif6" class="notif"></div>
+            <div id="kunci-notif6" class="kunci-jawaban"></div>
+        </div>
+        
         <button class="submit-btn" onclick="tampilkanSkor()">Lihat Skor</button>
         <div id="scoreBox" class="score-box"></div>
     </div>
