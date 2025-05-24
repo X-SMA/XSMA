@@ -159,6 +159,19 @@
         <h2>Vektor</h2>
 
         <div class="question">
+            <p>1. Apa nama titik perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius?</p>
+            <div class="options">
+                <label><input type="radio" name="notif1" value="A"> A. Titik maksimum</label>
+                <label><input type="radio" name="notif1" value="B"> B. Titik tengah</label>
+                <label><input type="radio" name="notif1" value="C"> C. Titik asal</label>
+                <label><input type="radio" name="notif1" value="D"> D. Titik koordinat</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif1')">Kirim Jawaban</button>
+            <div id="notif1" class="notif"></div>
+            <div id="kunci-notif1" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
             <p>6. Sebuah vektor memiliki panjang 5 dan arahnya sejajar dengan sumbu X positif, maka berapa koordinat vektor tersebut?</p>
             <div class="options">
                 <label><input type="radio" name="notif6" value="A"> A. (0,5)</label>
@@ -170,10 +183,10 @@
             <div id="notif6" class="notif"></div>
             <div id="kunci-notif6" class="kunci-jawaban"></div>
         </div>
-
+        
         <!-- Tambahkan 4 soal vektor lainnya -->
 
-        <button class="submit-btn" onclick="tampilkanSkor()">Lihat Skor & Kunci Jawaban</button>
+        <button class="submit-btn" onclick="tampilkanSkor()">Lihat Skor</button>
         <div id="scoreBox" class="score-box"></div>
     </div>
 
