@@ -101,29 +101,6 @@
             padding: 20px;
             color: white;
         }
-
-        {
-const img = document.getElementById('image');
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-
-img.onload = function () {
-  canvas.width = img.width;
-  canvas.height = img.height;
-  ctx.drawImage(img, 0, 0);
-
-  let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  let data = imageData.data;
-
-  for (let i = 0; i < data.length; i += 4) {
-    // Jika warna mendekati putih, buat transparan
-    if (data[i] > 200 && data[i + 1] > 200 && data[i + 2] > 200) {
-      data[i + 3] = 0; // Alpha jadi 0 (transparan)
-    }
-  }
-  ctx.putImageData(imageData, 0, 0);
-};
-    
         footer .left, footer .right {
             width: 100px; /* Sesuaikan ukuran gambar */
         }
@@ -348,8 +325,7 @@ img.onload = function () {
 
     <footer>
     <div class="left">
-        <canvas id="canvas"></canvas>
-<img id="image" src="logo unej.png" alt="Gambar Kiri" hidden>
+        <img src="unej.png" alt="Gambar Kiri">
     </div>
     <div class="center">
         <p>@2025 Media Pembelajaran Matematika Kelas 10 SMA </p>
@@ -359,7 +335,7 @@ img.onload = function () {
         <p>Universitas Jember</p>
     </div>
     <div class="right">
-        <img src="logo msc putih.jpg" alt="Gambar Kanan">
+        <img src="msc.jpg" alt="Gambar Kanan">
     </div>
 </footer>
     
